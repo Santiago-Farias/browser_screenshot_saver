@@ -18,7 +18,8 @@ driver.get('file:///D:/Programacion/Proyectos/screenshots_saver/index.html')
 elements = ['id', 'class', 'name', 'tag name', 'link text']
 menu_option_input = 0
 cycles = int
-output_folder = 'screenshots'
+
+daily_output_folder_path = create_daily_output_folder()
 
 while True:
     print("1. Capture an element and continue capturing after clicking")
@@ -29,7 +30,9 @@ while True:
     menu_option_input = int_input_check("Enter a option: ")
 
     if menu_option_input == 1:
-        element_capture = element_to_capture(elements, driver)
+        element_type = input("Enter the type of element to capture: ")
+        element_name = input(f"Enter the name of ({element_type}) element: ")
+        element_capture = element_to_capture(elements, driver, element_type, element_name)
         if type(element_capture) != str:
             cycles = int_input_check("Enter the number of captures do you want to do of a element: ")
             if cycles > 1:
@@ -37,21 +40,23 @@ while True:
             else:
                 secs_interval = 0
             print("Capturing elemnt...")
-            get_element_screenshot_cyclic(cycles, element_capture, output_folder, driver, secs_interval)
+            get_element_screenshot_cyclic(cycles, element_capture, daily_output_folder_path, driver, secs_interval, element_type, element_name)
             print("¡Element captured!")
         else:
             print(element_capture)
     elif menu_option_input == 2:
-        element_capture = element_to_capture(elements, driver)
+        element_type = input("Enter the type of element to capture: ")
+        element_name = input(f"Enter the name of ({element_type}) element: ")
+        element_capture = element_to_capture(elements, driver, element_type, element_name)
         if type(element_capture) != str:
             print("Capturing elemnt...")
-            get_element_screenshot(element_capture, output_folder, driver)
+            get_element_screenshot(element_capture, daily_output_folder_path, element_type, element_name)
             print("¡Element captured!")
         else:
             print(element_capture)
     elif menu_option_input == 3:
         print("Capturing the full screen...")
-        get_fullscreen_screenshot(output_folder, driver)
+        get_fullscreen_screenshot(daily_output_folder_path, driver)
         print("¡Screen captured!")
     elif menu_option_input == 4:
         print("Leaving please wait..")
@@ -69,7 +74,7 @@ Agregar:
 - Revisar en get_element_screenshot() que si el elemento no existe, diga que no exite y que no se rompa. CHECK
 - Revisar la funcion get_element_screenshot_cyclic() para hacer las validaciones correspondientes y que no rompa. CHECK
 - Hacer una gesión de carpetas, donde se guarden las capturas según el tipo de carpeta, las mismas deben tener sub-carpetas con la fecha. Si ya existe la carpeta con fecha
-hacer que no rompa.
+hacer que no rompa. CHECK
 - Hacer un sistema donde te pida la url y luego el menú, tantas veces como quiera el usuario hasta que diga BASTA.
-- Hacer que las capturas se guarden en una carpeta con fecha, dentro la captura con este nombre con tipo_nombretipo_horario ó fullscreen_horario.
+- Hacer que las capturas se guarden en una carpeta con fecha, dentro la captura con este nombre con tipo_nombretipo_horario ó fullscreen_horario. CHECK
 """
