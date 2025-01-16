@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Prueba de Captura</title></head>
+<body>
+    <div id="content">Contenido para capturar</div>
+    <button id="next"></button>
+    <div class="pepe">
+        <h2>
+            caca
+        </h2>
+    </div>
+    <script>
+        document.getElementById('next').onclick = function() {
+            document.getElementById('content').innerHTML = "Nuevo Contenido " + new Date()
+        }
+    </script>
+</body>
+</html>
