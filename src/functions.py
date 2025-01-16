@@ -46,10 +46,11 @@ def element_to_capture(elements: list, driver):
                 break
         if geraut == True:
             break
-        if i == len(elements) and geraut == False:
-            element_type_name = f"{element_type} is a non-existent element."
+        if i+1 == len(elements) and geraut == False:
+            element_type_name = f"ERROR: {element_type} is a non-existent element."
         break
 
+    print(len(elements))
     if type(element_type_name) != str:
         element_name = input(f"Enter the name of ({element_type}) element: ")
 

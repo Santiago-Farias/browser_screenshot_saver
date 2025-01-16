@@ -11,7 +11,6 @@ from selenium.webdriver.chrome.options import Options
 options = Options()
 options.add_argument("--log-level=1")
 driver = webdriver.Chrome(options=options)
-driver.get("https://www.google.com/")
 
 service = Service('D:\Programacion\Recursos\chromedriver-win64\chromedriver.exe')
 driver = webdriver.Chrome(service=service)
@@ -68,8 +67,9 @@ Agregar:
 - Captura de pantalla completa CHECK
 - La posibilidad de sacar una foto, sin cliks. CHECK
 - Revisar en get_element_screenshot() que si el elemento no existe, diga que no exite y que no se rompa. CHECK
-- Revisar la funcion get_element_screenshot_cyclic() para hacer las validaciones correspondientes y que no rompa.
+- Revisar la funcion get_element_screenshot_cyclic() para hacer las validaciones correspondientes y que no rompa. CHECK
 - Hacer una gesión de carpetas, donde se guarden las capturas según el tipo de carpeta, las mismas deben tener sub-carpetas con la fecha. Si ya existe la carpeta con fecha
 hacer que no rompa.
 - Hacer un sistema donde te pida la url y luego el menú, tantas veces como quiera el usuario hasta que diga BASTA.
+- Hacer que las capturas se guarden en una carpeta con fecha, dentro la captura con este nombre con tipo_nombretipo_horario ó fullscreen_horario.
 """
