@@ -20,16 +20,32 @@ This repository hosts an application that captures segments of the website that 
   git clone https://github.com/Santiago-Farias/browser_screenshot_saver.git
   cd browser_screenshot_saver
   ```
-2. Create and turn up a virtual environment:
-  ```bash
-  python -m venv env
-  env\Scripts\activate
-  ```
-3. Install dependencies:
+
+2. Download the Chrome Driver from: https://googlechromelabs.github.io/chrome-for-testing/
+   - Unzip de file,  copy his path and to the end of the path type: chromedriver.exe.
+   
+     Example: C:\Users\Carlos\Downloads\chromedriver-win64\chromedriver.exe
+
+3. You need a Python 3.13 or higher.
+
+4. Create and turn up a virtual environment:
+   
+    Windows
+    ```bash
+    python -m venv env
+    env\Scripts\activate
+    ```
+    Linux/Mac
+    ```
+    python -m venv env
+    source env/bin/activate
+    ```
+
+5. Install dependencies:
   ```bash
   pip install -r requirements.txt
   ```
-4. Star the app:
+6. Star the app:
   ```
   python main.py
   ```
