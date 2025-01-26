@@ -22,10 +22,10 @@ This repository hosts an application that captures segments of the website that 
   ```
 
 2. Download the Chrome Driver from: https://googlechromelabs.github.io/chrome-for-testing/
-   - Unzip de file,  copy his path and to the end of the path type: chromedriver.exe.
+   - Unzip de file, copy his path and to the end of the path type: chromedriver.exe.
    
-     Example: C:\Users\Carlos\Downloads\chromedriver-win64\chromedriver.exe
-   - Paste the path in indicated section of the main.py code. 
+     Example: C:/Users/Carlos/Downloads/chromedriver-win64/chromedriver.exe
+   - Paste the path in indicated section in the code of main.py file. 
 
 3. You need a Python 3.13 or higher.
 
@@ -46,7 +46,10 @@ This repository hosts an application that captures segments of the website that 
   ```bash
   pip install -r requirements.txt
   ```
-6. Star the app:
+
+6. Set the url of the website in indicated section in the code of main.py file.
+  
+7. Star the app:
   ```
   python main.py
   ```
