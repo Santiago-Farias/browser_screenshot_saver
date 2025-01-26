@@ -12,9 +12,9 @@ options = Options()
 options.add_argument("--log-level=1")
 driver = webdriver.Chrome(options=options)
 
-service = Service('D:\Programacion\Recursos\chromedriver-win64\chromedriver.exe')
+service = Service('-') # Set you ChromeDriver Path using '/' separator
 driver = webdriver.Chrome(service=service)
-driver.get('file:///D:/Programacion/Proyectos/screenshots_saver/index.html')
+driver.get('https://browser-screenshot-saver.vercel.app/') # Set website, 'https://browser-screenshot-saver.vercel.app/' by default
 elements = ['id', 'class', 'name', 'tag name', 'link text']
 menu_option_input = 0
 cycles = int
@@ -66,15 +66,3 @@ while True:
         print("Numeber of option doesn't exist")
 
 driver.quit()
-
-"""
-Agregar:
-- Captura de pantalla completa CHECK
-- La posibilidad de sacar una foto, sin cliks. CHECK
-- Revisar en get_element_screenshot() que si el elemento no existe, diga que no exite y que no se rompa. CHECK
-- Revisar la funcion get_element_screenshot_cyclic() para hacer las validaciones correspondientes y que no rompa. CHECK
-- Hacer una gesión de carpetas, donde se guarden las capturas según el tipo de carpeta, las mismas deben tener sub-carpetas con la fecha. Si ya existe la carpeta con fecha
-hacer que no rompa. CHECK
-- Hacer un sistema donde te pida la url y luego el menú, tantas veces como quiera el usuario hasta que diga BASTA.
-- Hacer que las capturas se guarden en una carpeta con fecha, dentro la captura con este nombre con tipo_nombretipo_horario ó fullscreen_horario. CHECK
-"""
