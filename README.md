@@ -25,6 +25,7 @@ This repository hosts an application that captures segments of the website that 
    - Unzip de file,  copy his path and to the end of the path type: chromedriver.exe.
    
      Example: C:\Users\Carlos\Downloads\chromedriver-win64\chromedriver.exe
+   - Paste the path in indicated section of the main.py code. 
 
 3. You need a Python 3.13 or higher.
 
